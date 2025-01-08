@@ -20,6 +20,7 @@ export abstract class BasePage {
         while (count < retries) {
             try {
                 await selector.waitFor({ state: selector_state, timeout: timeout })
+                break;
             }
             catch (error) {
                 count++
