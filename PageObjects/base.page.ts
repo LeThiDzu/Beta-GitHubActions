@@ -15,6 +15,21 @@ export abstract class BasePage {
         await selector.click()
     }
 
+    async wait_selector(selector: Locator, selector_state: any, timeout: number, retries: number) {
+        let count = 0
+        while (count < retries) {
+            try {
+                await selector.waitFor({ state: selector_state, timeout: timeout })
+            }
+            catch (error) {
+                count++
+                if (count == retries ) {
+                    throw new Error(`Element still not ${selector_state} after ${retries} times of retries`)
+                }
+            }
+        }
+    }
+
     async fill_text(selector: Locator, text: string) {
         await selector.waitFor({ state: 'visible' })
         await selector.fill(text)
