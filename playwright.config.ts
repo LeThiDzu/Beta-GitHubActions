@@ -29,6 +29,7 @@ export default defineConfig({
     trace: 'on-first-retry',
     navigationTimeout: 30000,
     actionTimeout: 15000,
+    screenshot: 'only-on-failure'
   },
 
   /* Configure projects for major browsers */
