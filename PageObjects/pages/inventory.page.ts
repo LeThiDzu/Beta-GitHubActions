@@ -7,7 +7,7 @@ export default class InventoryPage extends BasePage {
 
     async add_first_product_to_cart() {
         // await this.btn_add_to_cart.first().waitFor({ state: 'visible' })
-        await this.wait_selector(this.btn_add_to_cart.first(), 'visible', 5000, 5)
+        await this.wait_selector(this.btn_add_to_cart.first(), 'attached', 5000, 5)
         await this.btn_add_to_cart.first().click()
     }
 
