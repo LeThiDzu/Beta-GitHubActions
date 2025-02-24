@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      TEST_RUN_LINK: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}
       URL: ${{ secrets.URL }}
       USERNAME: ${{secrets.USERNAME}}
       PASSWORD: ${{secrets.PASSWORD}}
