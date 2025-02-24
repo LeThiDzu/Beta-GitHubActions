@@ -66,7 +66,7 @@ const generateCustomLayout = (summaryResults: SummaryResults): Array<KnownBlock 
         type: "section",
         text: {
             type: "mrkdwn",
-            text: `Link to job: ${process.env.TEST_RUN_LINK}`,
+            text: process.env.TEST_RUN_LINK ? `Link to job: ${process.env.TEST_RUN_LINK}` : "No job link available",
         },
     });
 
