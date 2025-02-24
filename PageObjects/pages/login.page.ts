@@ -1,6 +1,4 @@
 import { BasePage } from '../base.page';
-import dotenv from 'dotenv';
-dotenv.config();
 
 export default class LoginPage extends BasePage {
     readonly txt_username = this.page.locator('#user-name')
