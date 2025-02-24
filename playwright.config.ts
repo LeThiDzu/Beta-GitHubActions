@@ -11,7 +11,6 @@ export default defineConfig({
   },
   reporter: [
     ['html'],  // HTML reporter
-    ['junit', {outputFile: 'test-results/junit.xml'}],
     [
       "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
       {
@@ -19,12 +18,7 @@ export default defineConfig({
         sendResults: "always",
         layout: generateCustomLayout,
       },
-    ],
-    ['@estruyf/github-actions-reporter', {
-      title: 'Media Database E2E Tests',
-      useDetails: true,
-      showError: true
-    }],
+    ]
   ],
   use: {
     headless: true,
